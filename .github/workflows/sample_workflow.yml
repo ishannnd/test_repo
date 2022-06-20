@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: sample_workflow
+
+# Controls when the workflow will run
+on: [push]  # Triggers the workflow on push or pull request events but only for the "main" branc
+
+jobs: 
+  explore_first_flow:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - run : echo "The job was automatically triggered by a ${{ github.event_name }} event ."
+      - run : echo " This job is running on a ${{ runner.os}} server hosted by github!"
+      - run : echo " the name of your branch is  ${{ github.ref }} and your repository is ${{ repository }} ."
+      - name: check out repository code 
+      users : actions/checkout@v2
+      - name: List files in the repository 
+      run: |
+        ls ${{ github.workspace }}
+      - run : echo " This job's status is ${{ job.status }} ."
