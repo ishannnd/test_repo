@@ -13,7 +13,7 @@ jobs:
     steps:
       - run : echo "The job was automatically triggered by a ${{ github.event_name }} event ."
       - run : echo " This job is running on a ${{ runner.os}} server hosted by github!"
-      - run : echo " the name of your branch is  ${{ github.ref }} and your repository is ${{ repository }} ."
+      - run : echo " the name of your branch is  ${{ github.ref }} and your repository is ${{ github.repository }} ."
       - name: check out repository code 
         uses : actions/checkout@v2
       - name: List files in the repository 
