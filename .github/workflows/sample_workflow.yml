@@ -15,8 +15,8 @@ jobs:
       - run : echo " This job is running on a ${{ runner.os}} server hosted by github!"
       - run : echo " the name of your branch is  ${{ github.ref }} and your repository is ${{ repository }} ."
       - name: check out repository code 
-      users : actions/checkout@v2
+        uses : actions/checkout@v2
       - name: List files in the repository 
-      run: |
-        ls ${{ github.workspace }}
+        run: |
+           ls ${{ github.workspace }}
       - run : echo " This job's status is ${{ job.status }} ."
